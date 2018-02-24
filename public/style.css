@@ -1,0 +1,527 @@
+body {
+  font-size: 16px;
+  background-color: #edf0f1;
+  font-family: 'Roboto', sans-serif;
+}
+
+/*SCHEMA*/
+#divSchema {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+input {
+  outline: none;
+}
+
+.barTop {
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: red;
+  z-index: 2;
+  color: white;
+  box-shadow: 0px 3px 3px rgba(44,62,80,0.15);
+}
+
+
+.barName {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 20px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.barTop svg{
+  fill: white;
+  position: absolute;
+  top: 20px;
+}
+
+.weekBtn {
+  left: 20px;
+  top: 16.5px;
+  position: absolute;
+  font-size: 22.5px;
+  font-weight: bold;
+  z-index: 3;
+}
+
+.weekModal {
+  display: none;
+  position: fixed;
+  top:50px;
+  left: 55px;
+  min-height: 50px;
+  max-height: calc(100% - 130px);
+  max- width: 200px;
+  background-color: #b3b3b3;
+  z-index: 1000000;
+  overflow: auto;
+   -webkit-overflow-scrolling: touch;
+  box-shadow: 3px 3px 5px rgba(44,62,80,0.15);
+}
+
+.weekModal ul {
+  font-size: 16px;
+  padding: 10px;
+}
+
+.weekModal ul li:first-child {
+  margin-bottom: 5px;
+}
+
+.weekModalLi{
+  margin-bottom: 5px;
+}
+
+.weekModalLi:hover {
+  cursor: pointer;
+}
+
+.modalLiNo {
+  font-weight: bold;
+}
+
+/*.weekBtn svg {
+  left: 50px;
+  height: 27.5px;
+  width: 27.5px;
+}*/
+
+.weekBtn:hover {
+  cursor: pointer;
+}
+
+.settingsBtn svg, #goBack svg {
+  right: 20px;
+  height: 25px;
+  width: 25px;
+}
+
+#reloadBtn svg {
+  right: 60px;
+  height: 21px;
+  width: 21px;
+  top: 22px;
+}
+
+.barTop svg:hover {
+  cursor: pointer;
+}
+
+.barBottom {
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  background-color: #fff;
+  bottom: 0;
+  left: 0;
+  color: white;
+  font-weight: bold;
+  z-index: 5;
+  box-shadow: 0px -1px 1px rgba(0,0,0,0.15);
+}
+
+.barUl {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.barLi {
+  z-index: 5;
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: grey;
+  font-size: 20px;
+}
+
+.barLi:hover {
+  cursor: pointer;
+}
+
+.barBottomSvg {
+}
+
+svg {
+  width: 20px;
+  height: 20px;
+  fill: grey;
+}
+
+
+/*SETTINGS*/
+#settings {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #edf0f1;
+  overflow: none;
+  padding: 70px 10px 10px;
+  /*-webkit-overflow-scrolling: touch;*/
+  font-size: 16px;
+  overflow: auto;
+}
+
+.scheman p {
+  margin-bottom: 5px;
+}
+
+.schemanLi {
+  min-height: 10px;
+  width: 100%;
+  background-color: white;
+  list-style: none;
+  box-shadow: 0px 1px 2px rgba(44,62,80,0.15);
+  margin-bottom: 2px;
+  padding: 5px;
+}
+
+#addSchedule {
+  margin-top: 10px;
+  width: 150px;
+}
+
+#addScheduleModal {
+  display: none;
+  min-height: 20px;
+  width: 100%;
+  z-index: 5;
+}
+
+#addScheduleModal input {
+  text-transform: capitalize;
+}
+
+#schemeInputFirst {
+  margin-bottom: -5px;
+}
+
+#scheduleModalBtn {
+  width: 150px;
+  height: 29px;
+  margin-top: 10px;
+  margin-bottom: -40px;
+}
+
+.checkBoxDiv {
+  width: 20px;
+  height: 20px;
+  background: #ddd;
+  margin: 20px 0 0 0;
+  position: relative;
+  left: calc(100% - 140px);
+  top: -5px;
+}
+
+.checkBoxDiv label {
+  display: block;
+  width: 12.5px;
+  height: 12.5px;
+  cursor: pointer;
+  position: absolute;
+  top: 3.75px;
+  left: 3.75px;
+  z-index: 1;
+  background: #ddd;
+  transition: all .25s ease;
+}
+
+.checkBoxDiv input[type=checkbox]:checked + label {
+  background: red;
+}
+
+input[type=checkbox] {
+  visibility: hidden;
+}
+
+#capitalize {
+  position: relative;
+  top: -42.5px;
+  right: -25px;
+}
+
+#changeColor {
+  width: 150px;
+  min-height: 10px;
+  margin-top: 20px;
+}
+
+#colorInput {
+  display: none;
+}
+
+#changeColor:before {
+  content: ' ';
+  background-color: #d4dbdd;
+  width: 70%;
+  height: 1px;
+  position: absolute;
+  margin-top: -15px;
+  left: 15%;
+}
+
+#settings .btn:hover, .removeSchedule {
+  cursor: pointer;
+}
+
+#settings .btn {
+  min-height: 10px;
+  padding: 5px;
+  background-color: red;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0px 1px 2px rgba(44,62,80,0.15);
+}
+
+#settings input {
+  width: 100%;
+  height: 30px;
+  margin-top: 10px;
+  font-size: 16px;
+  padding-left: 2.5px;
+  outline: none;
+}
+
+#settings input:focus {
+  border: 1.5px solid red;
+}
+
+#removeScheduleBtn {
+  min-width: 50px;
+  margin-top: 7.5px;
+  float: right;
+}
+
+.removeSchedule {
+  fill: red;
+  height: 17px;
+  width: 17px;
+  float: right;
+  display: none;
+}
+
+#creator {
+  position: absolute;
+  margin-top: 10px;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  font-size: 14px;
+  color: #bfbfbf;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+#creator a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/*INTRO*/
+#intro {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+#welcome {
+  font-size: 25px;
+  margin-top: -100px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+#intro input {
+  height: 30px;
+  width: 200px;
+  padding-left: 5px;
+  margin: 2.5px;
+  outline: none;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+#intro input:focus {
+  border: 2px solid red;
+}
+
+#intro input::-webkit-input-placeholder {
+  font-size: 16px;
+}
+
+#introBtn {
+  margin-top: 7.5px;
+  width: 80px;
+  height: 25px;
+  background-color: red;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#introBtn:focus, #introBtn:hover {
+  cursor: pointer;
+}
+
+#disclaimer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 5px;
+  color: grey;
+  margin-bottom: 25px;
+}
+
+#disclaimer p{
+  text-align: center;
+  margin: 0 5px 0 0;
+
+}
+
+#disclaimerCreator {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  color: grey;
+  position: absolute;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.swiper-containerSchema {
+  width: 100%;
+  margin: 80px 0 100px;
+  padding: 10px;
+}
+
+.swiper-containerSchema .swiper-wrapper {
+  position: fixed;
+}
+
+.swiper-containerSchema .swiper-slide {
+    width: 100%;
+    height: 100%;
+}
+
+.iframeSchema {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 15px;
+}
+
+.swiper-containerSchema .swiper-pagination-bullet {
+  border-radius: 0;
+  width: 15%;
+  height: 30px;
+  background-color: #edf0f1;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.swiper-containerSchema .swiper-pagination  {
+  position: fixed;
+  width: 100%;
+  top: -20px;
+  margin-bottom: 50px;
+  z-index:2;
+}
+
+.swiper-containerSchema .swiper-pagination-bullet-active  {
+  border-bottom: 2.5px solid red;
+  color: red;
+}
+/*nytt*/
+.swiper-container {
+  width: 100%;
+  height:100%;
+}
+
+#swiper-slideMat {
+   position: relative;
+   top: 20px;
+}
+
+/*ovan nytt*/
+
+#timeLine {
+  height: 2px;
+  line-height: 2px;
+  overflow: hidden;
+  font-size: 0.1px;
+  width: calc(100% - 1px);
+  background-color: red;
+  position: absolute;
+  z-index: 10;
+  /*bottom: 462.5px;*/
+  bottom: 151.25px;
+  /*top: 81px;*/
+  /*129.75*/
+}
+
+#timeBall {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-left: 10px solid red;
+  border-bottom: 5px solid transparent;
+  position: absolute;
+  z-index: 10;
+  margin-left: -8px;
+  margin-bottom: -4px;
+}
+
+#timeStamp {
+  position: relative;
+  margin-top: -22.5px;
+  color: red;
+  font-weight: bold;
+  left: 5px;
+  font-size: 14px;
+}
+
+.goldMemberSign {
+  display: none;
+}
+
+.meSign {
+  display: none;
+}
